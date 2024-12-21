@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block savat %}active{% endblock %}
+{% block content %}
+
+<!-- Savatcha sahifasi -->
+<section class="cart_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>Sizning Savatingiz</h2>
+        </div>
+        <div class="cart-items">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if cart %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Mahsulot</th>
+                    <th>Narxi</th>
+                    <th>Miqdori</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for product_id, item in cart.items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>${{ item.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="cart-total">
+                <h4>Jami: ${{ total_price }}</h4>
+            </div>
+            <!-- Sotib olish va o'chirish tugmalari -->
+            <div class="cart-actions d-flex justify-content-end mt-4">
+                <form method="post" action="{% url 'checkout' %}" class="me-2">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success">Sotib olish</button>
+                </form>
+                <form method="post" action="{% url 'clear_cart' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Hammasini o'chirish</button>
+                </form>
+            </div>
+            {% else %}
+            <p>Savatchangiz bo'sh!</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<!-- savatcha sahifasi tugadi -->
+
+{% endblock %}

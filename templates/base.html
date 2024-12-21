@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <!-- Basic -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- Mobile Metas -->
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link
+            rel="shortcut icon"
+            href="{% static 'images/favicon.png' %}"
+            type="image/x-icon"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            rel="stylesheet"
+    />
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+
+    <title>Giftos</title>
+
+    <!-- Slider stylesheet -->
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/bootstrap.css' %}"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+    <!-- Responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+                <span> Giftos </span>
+            </a>
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item {% block home %}{% endblock %}">
+                        <a class="nav-link" href="{% url 'home' %}">
+                            Bosh sahifa
+                        </a>
+                    </li>
+                    <li class="nav-item {% block magazin %}{% endblock %}">
+                        <a class="nav-link" href="{% url 'shop' %}">Magazin</a>
+                    </li>
+                    <li class="nav-item {% block savat %}{% endblock %}">
+                        <a class="nav-link" href="{% url 'cart' %}">Savat</a>
+                    </li>
+                    <li class="nav-item {% block izoh %}{% endblock %}">
+                        <a class="nav-link" href="{% url 'testimonial' %}">Izohlar</a>
+                    </li>
+                    <li class="nav-item {% block contact %}{% endblock %}">
+                        <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <!-- end header section -->
+</div>
+<!-- end hero area -->
+
+{% block content %} {% endblock %}
+
+<!-- info section -->
+
+<section class="info_section layout_padding2-top">
+    <div class="social_container">
+        <div class="social_box">
+            <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+    <div class="info_container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <h6>HAQIMIZDA</h6>
+                    <p>
+                        Biz haqimizda qisqacha ma'lumot, sizni qiziqtirgan savollarni bizga yuboring.
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="info_form">
+                        <h5>Yangiliklar ro'yxatiga yozilish</h5>
+                        <form action="#">
+                            <input type="email" placeholder="Elektron pochtangizni kiriting"/>
+                            <button>Yuborish</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6>YORDAM KERAK</h6>
+                    <p>
+                        Biz bilan bog'laning yoki yordam kerak bo'lsa, sizga yordam berish uchun shu yerda bo'lamiz.
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6>BIZ BILAN BOG'LANING</h6>
+                    <div class="info_link-box">
+                        <a href="">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span> Gb road 123, London, Buyuk Britaniya</span>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span>+01 12345678901</span>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span> demo@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayYear"></span> Barcha huquqlar himoyalangan
+                <a href="https://html.design/">Free Html Templates</a>
+            </p>
+        </div>
+    </footer>
+    <!-- footer section -->
+</section>
+
+<!-- end info section -->
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="js/custom.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
